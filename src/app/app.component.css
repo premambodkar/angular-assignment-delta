@@ -7,8 +7,11 @@
   background-color: #000d58;
 }
 
-.list-group {
+.list-group,
+.list-group-item {
   background-color: #000d58 !important;
+  color: white;
+  border-color: 1px solid white;
 }
 
 .page-content {
