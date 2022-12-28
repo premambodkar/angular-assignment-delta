@@ -1,6 +1,27 @@
 <mat-drawer-container class="example-container" hasBackdrop="true">
-  <mat-drawer #drawer mode="over">I'm a drawer</mat-drawer>
+  <mat-drawer #drawer mode="over">
+    <ul class="list-group">
+      <li *ngFor="let item of menuItem" class="list-group-item">
+        <mat-icon fontIcon="{{ item.icon }}"> </mat-icon>
+        <a>{{ item.name }}</a>
+      </li>
+    </ul>
+  </mat-drawer>
   <mat-drawer-content>
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    <div class="page-content">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <div class="topbar d-flex flex-row-reverse">
+            <button
+              mat-raised-button
+              class="btn btn-primary"
+              (click)="drawer.toggle()"
+            >
+              Toggle
+            </button>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

@@ -1,12 +1,24 @@
 .example-container {
-  width: 400px;
-  height: 200px;
-  margin: 12px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-content {
+  width: 100vw;
+  height: 100vh;
+}
+
+.topbar {
+  width: 100vw;
+}
+
+mat-drawer {
+  height: 100vh;
+  width: 15rem;
   border: 1px solid #555;
 }
 
 mat-drawer-content {
-  padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
