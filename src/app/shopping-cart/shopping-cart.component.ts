@@ -11,7 +11,7 @@ import { ShoppingBagModel } from '../model/shopping-bag.model';
 export class ShoppingCartComponent implements OnInit {
   dataSource!: any;
   shoppingBagData: ShoppingBagModel[] = [];
-
+  cartTotal: number = 0;
   constructor(public commonService: CommonService) {}
 
   ngOnInit() {
@@ -29,11 +29,13 @@ export class ShoppingCartComponent implements OnInit {
           return item.id === cart.product_id;
         }
       );
+      data.productId = product.id;
       data.productName = product.name;
       data.price = product.price;
       data.quentity = cart.quentity;
       data.total = +cart.quentity * +product.price;
       this.shoppingBagData.push(data);
+      this.cartTotal += data.total;
     });
   }
 }

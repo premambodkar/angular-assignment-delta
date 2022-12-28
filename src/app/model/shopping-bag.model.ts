@@ -1,4 +1,5 @@
 export class ShoppingBagModel {
+  productId: string;
   productName: string;
   quentity: number;
   price: number;

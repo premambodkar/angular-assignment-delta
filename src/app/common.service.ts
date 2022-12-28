@@ -47,6 +47,18 @@ export class CommonService {
     this.cartUpdated.next(true);
   }
 
+  removeFromCart(product_id: string) {
+    const countCart = this.cart.length;
+    this.cart.forEach((cart: CartModel, index: number) => {
+      if (cart.product_id === product_id) {
+        this.cart.splice(index, 1);
+      }
+    });
+    if (this.cart.length !== countCart) {
+      this.cartUpdated.next(true);
+    }
+  }
+
   updateCartQuantity(cartData: CartModel) {
     this.cart.forEach((cartItem: CartModel) => {
       if (cartItem.product_id === cartData.product_id) {

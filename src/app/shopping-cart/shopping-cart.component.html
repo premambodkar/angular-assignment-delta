@@ -17,8 +17,30 @@
             <td>{{ item.quentity }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.total }}</td>
+            <td>
+              <button
+                mat-raised-button
+                class="btn btn-link m-2"
+                (click)="commonService.removeFromCart(item.productId)"
+              >
+                <mat-icon fontIcon="delete"> </mat-icon>
+              </button>
+            </td>
           </tr>
         </ng-container>
+        <tr
+          *ngIf="
+            !shoppingBagData ||
+            (shoppingBagData && shoppingBagData.length === 0)
+          "
+        >
+          <td colspan="5">No Data in shopping Cart</td>
+        </tr>
+        <tr *ngIf="cartTotal">
+          <td colspan="3" class="text-center">Total</td>
+          <td>{{ cartTotal }}</td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
