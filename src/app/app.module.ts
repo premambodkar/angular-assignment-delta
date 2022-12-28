@@ -14,6 +14,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { QuentityInputComponent } from './product-list/quentity-input/quentity-input.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { QuentityInputComponent } from './product-list/quentity-input/quentity-i
     MatTableModule,
     MatDialogModule,
     MatInputModule,
+    CommonModule,
     MatFormFieldModule,
     MatToolbarModule,
   ],
