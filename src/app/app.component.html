@@ -24,7 +24,7 @@
             <button
               mat-raised-button
               class="btn btn-primary m-2"
-              (click)="drawer.toggle()"
+              (click)="openDialog()"
             >
               <div class="d-flex align-items-center">
                 <mat-icon fontIcon="shopping_cart"> </mat-icon>
@@ -34,6 +34,21 @@
           </div>
         </mat-toolbar-row>
       </mat-toolbar>
+      <div class="container">
+        <div class="row">
+          <ng-container *ngFor="let item of commonService.productList">
+            <div class="card col-4">
+              <img class="card-img-top" src="..." alt="Card image cap" />
+              <div class="card-body">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div></ng-container
+          >
+        </div>
+      </div>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

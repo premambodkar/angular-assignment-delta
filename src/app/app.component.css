@@ -14,6 +14,41 @@
   border-color: 1px solid white;
 }
 
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1050;
+}
+
+.cdk-global-overlay-wrapper {
+  position: fixed;
+  z-index: 1050;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+}
+.cdk-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+}
+
+.cdk-overlay-container,
+.cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .page-content {
   width: 100vw;
   height: 100vh;

@@ -4,6 +4,9 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonService } from './common.service';
+import { CustomFormDialogComponent } from './dialog-data/custom-form-dialog.component';
 
 @Component({
   selector: 'my-app',
@@ -22,6 +25,16 @@ export class AppComponent {
   ];
   @ViewChild('mat-drawer')
   matDrawer!: any;
+
+  constructor(public commonService: CommonService, public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(CustomFormDialogComponent, {
+      data: {
+        animal: 'panda',
+      },
+    });
+  }
 }
 
 export class MenuItem {

@@ -1,0 +1,50 @@
+<form class="example-form" [formGroup]="myForm" (ngSubmit)="submitData(myForm)">
+  <mat-dialog-content>
+    <h2>Add Product Info</h2>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label>Product Image Uploader</mat-label>
+          <input
+            type="file"
+            class="form-control"
+            matInput
+            formControlName="fileUploader"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input
+            type="text"
+            class="form-control"
+            matInput
+            placeholder="Name"
+            formControlName="name"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label>Price</mat-label>
+          <input
+            type="number"
+            class="form-control"
+            matInput
+            placeholder="price"
+            formControlName="price"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="btn btn-default" mat-button mat-dialog-close type="reset">
+      Cancel
+    </button>
+    <button class="btn btn-primary" mat-button type="submit">Submit</button>
+  </mat-dialog-actions>
+</form>
