@@ -3,8 +3,8 @@
     <ul class="list-group">
       <li *ngFor="let item of menuItem" class="list-group-item">
         <div class="d-flex align-items-center">
-          <mat-icon fontIcon="{{ item.icon }}"> </mat-icon>
-          <a>{{ item.name }}</a>
+          <mat-icon [fontIcon]="item.icon"> </mat-icon>
+          <a class="ml-2 text-capitalize">{{ item.name }}</a>
         </div>
       </li>
     </ul>
