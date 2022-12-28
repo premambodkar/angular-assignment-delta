@@ -6,5 +6,13 @@ import { CommonService } from '../common.service';
   templateUrl: 'shopping-cart.component.html',
 })
 export class ShoppingCartComponent {
+  displayedColumns: string[] = [
+    'name',
+    'quentity',
+    'price_details',
+    'total',
+    'action',
+  ];
+  dataSource!: any;
   constructor(public commonService: CommonService) {}
 }

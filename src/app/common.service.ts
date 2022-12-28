@@ -8,7 +8,9 @@ import { ProductModel } from './product.model';
 export class CommonService {
   productList: ProductModel[] = [];
   cart: CartModel[] = [];
-  constructor() {}
+  constructor() {
+    this.addproduct(new ProductModel({ name: 'TV', price: 2000 }));
+  }
 
   addproduct() {}
 

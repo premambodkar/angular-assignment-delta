@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
+    MatTableModule,
     MatDialogModule,
     MatFormFieldModule,
     MatToolbarModule,
