@@ -13,7 +13,7 @@ export class ProductListComponent {
 
   increment() {}
 
-  addToCart(product_id: number, quentity: number) {
+  addToCart(product_id: string, quentity: number) {
     const cartData = new CartModel({
       product_id: product_id,
       quentity: quentity,

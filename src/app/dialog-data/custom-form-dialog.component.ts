@@ -1,12 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommonService } from '../common.service';
+import { ProductModel } from '../model/product.model';
 
 @Component({
   selector: 'custom-form-dialog',
@@ -31,7 +27,36 @@ export class CustomFormDialogComponent {
 
   onFileInput(data: any) {}
 
-  submitData(form: FormGroup) {
-    console.log(form);
+  submitData(formGroup: FormGroup) {
+    if (formGroup.valid) {
+      const product = new ProductModel();
+      product.name = formGroup.value.name;
+      product.price = formGroup.value.price;
+      product.image = formGroup.value.image;
+      product.id = this.productIdGenerator();
+      this.commonService.addproduct(product);
+    } else {
+    }
+  }
+
+  productIdGenerator() {
+    const productId = this.randomString(16);
+    if (
+      this.commonService.productList.some((product: ProductModel) => {
+        return product.id !== productId;
+      })
+    ) {
+      this.productIdGenerator();
+    }
+    return productId;
+  }
+
+  randomString(length: number) {
+    const chars =
+      '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var result = '';
+    for (var i = length; i > 0; --i)
+      result += chars[Math.floor(Math.random() * chars.length)];
+    return result;
   }
 }
