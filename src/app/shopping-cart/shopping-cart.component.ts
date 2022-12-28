@@ -9,15 +9,8 @@ import { ShoppingBagModel } from '../model/shopping-bag.model';
   templateUrl: 'shopping-cart.component.html',
 })
 export class ShoppingCartComponent implements OnInit {
-  displayedColumns: string[] = [
-    'name',
-    'quentity',
-    'price_details',
-    'total',
-    'action',
-  ];
   dataSource!: any;
-  tableData: ShoppingBagModel[] = [];
+  shoppingBagData: ShoppingBagModel[] = [];
 
   constructor(public commonService: CommonService) {}
 
@@ -28,6 +21,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   buildCart() {
+    this.shoppingBagData = [];
     this.commonService.cart.forEach((cart: CartModel) => {
       const data = new ShoppingBagModel();
       const product: ProductModel = this.commonService.productList.find(
@@ -35,11 +29,11 @@ export class ShoppingCartComponent implements OnInit {
           return item.id === cart.product_id;
         }
       );
-      data.productName = product.id;
+      data.productName = product.name;
       data.price = product.price;
       data.quentity = cart.quentity;
       data.total = +cart.quentity * +product.price;
-      this.tableData.push(data);
+      this.shoppingBagData.push(data);
     });
   }
 }
