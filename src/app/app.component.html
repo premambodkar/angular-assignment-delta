@@ -2,8 +2,10 @@
   <mat-drawer #drawer mode="over">
     <ul class="list-group">
       <li *ngFor="let item of menuItem" class="list-group-item">
-        <mat-icon fontIcon="{{ item.icon }}"> </mat-icon>
-        <a>{{ item.name }}</a>
+        <div class="d-flex align-items-center">
+          <mat-icon fontIcon="{{ item.icon }}"> </mat-icon>
+          <a>{{ item.name }}</a>
+        </div>
       </li>
     </ul>
   </mat-drawer>
