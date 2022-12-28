@@ -8,6 +8,8 @@ import { ProductModel } from './model/product.model';
 export class CommonService {
   productList: ProductModel[] = [];
   cart: CartModel[] = [];
+  dialogRef!: any;
+
   constructor() {
     this.addproduct(new ProductModel({ name: 'TV', price: 2000 }));
     this.addproduct(new ProductModel({ name: 'Fridge', price: 2000 }));
@@ -25,6 +27,9 @@ export class CommonService {
       })
     ) {
       this.productList.push(productDetails);
+    }
+    if (this.dialogRef) {
+      this.dialogRef.close();
     }
   }
 

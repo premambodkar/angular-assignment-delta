@@ -23,13 +23,14 @@ export class AppComponent {
     { name: 'my profile', icon: 'groups', link: '' },
     { name: 'settings', icon: 'tune', link: '' },
   ];
+
   @ViewChild('mat-drawer')
   matDrawer!: any;
 
   constructor(public commonService: CommonService, public dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(CustomFormDialogComponent, {
+    this.commonService.dialogRef = this.dialog.open(CustomFormDialogComponent, {
       data: {
         animal: 'panda',
       },

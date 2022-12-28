@@ -35,7 +35,6 @@ export class CustomFormDialogComponent {
       product.image = formGroup.value.image;
       product.id = this.productIdGenerator();
       this.commonService.addproduct(product);
-    } else {
     }
   }
 
@@ -43,7 +42,7 @@ export class CustomFormDialogComponent {
     const productId = this.randomString(16);
     if (
       this.commonService.productList.some((product: ProductModel) => {
-        return product.id !== productId;
+        return product.id === productId;
       })
     ) {
       this.productIdGenerator();
