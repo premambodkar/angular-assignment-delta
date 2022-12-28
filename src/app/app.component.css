@@ -14,6 +14,11 @@
   border-color: 1px solid white;
 }
 
+.mat-toolbar-multiple-rows {
+  background-color: #000d58;
+  margin-bottom: 1rem;
+}
+
 .cdk-overlay-container {
   position: fixed;
   z-index: 1050;

@@ -34,6 +34,7 @@ import { CommonModule } from '@angular/common';
   declarations: [
     AppComponent,
     ShoppingCartComponent,
+    DefaultImage,
     ProductListComponent,
     QuentityInputComponent,
     CustomFormDialogComponent,
