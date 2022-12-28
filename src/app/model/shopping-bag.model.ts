@@ -1,9 +1,8 @@
-export class ProductModel {
-  id: string;
-  image: any;
-  name: string;
+export class ShoppingBagModel {
+  productName: string;
+  quentity: number;
   price: number;
-
+  total: number;
   constructor(obj?: any) {
     if (obj) {
       return this.fromJSON(obj);

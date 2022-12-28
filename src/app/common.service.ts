@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { CartModel } from './model/cart.model';
 import { ProductModel } from './model/product.model';
 
@@ -9,6 +10,9 @@ export class CommonService {
   productList: ProductModel[] = [];
   cart: CartModel[] = [];
   dialogRef!: any;
+
+  cartUpdated = new Subject();
+  _cartUpdated = this.cartUpdated.asObservable();
 
   constructor() {
     this.initialData();
@@ -40,6 +44,7 @@ export class CommonService {
     } else {
       this.updateCartQuantity(cartData);
     }
+    this.cartUpdated.next(true);
   }
 
   updateCartQuantity(cartData: CartModel) {

@@ -24,9 +24,6 @@ export class AppComponent {
     { name: 'settings', icon: 'tune', link: '' },
   ];
 
-  @ViewChild('mat-drawer')
-  matDrawer!: any;
-
   constructor(public commonService: CommonService, public dialog: MatDialog) {}
 
   openDialog() {

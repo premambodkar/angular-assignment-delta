@@ -19,14 +19,18 @@ export class QuentityInputComponent {
   }
 
   decrement() {
-    --this.quentity;
+    if (this.quentity > 0) {
+      --this.quentity;
+    }
   }
 
   addToCart() {
-    const cartData = new CartModel({
-      product_id: this.productid,
-      quentity: this.quentity,
-    });
-    this.commonService.addToCart(cartData);
+    if (this.quentity > 0) {
+      const cartData = new CartModel({
+        product_id: this.productid,
+        quentity: this.quentity,
+      });
+      this.commonService.addToCart(cartData);
+    }
   }
 }
