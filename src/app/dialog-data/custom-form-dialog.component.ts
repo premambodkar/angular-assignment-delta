@@ -27,7 +27,8 @@ export class CustomFormDialogComponent {
 
   onFileInput(data: any) {}
 
-  submitData(formGroup: FormGroup) {
+  submitData(formGroup: FormGroup, event: Event) {
+    event.preventDefault();
     if (formGroup.valid) {
       const product = new ProductModel();
       product.name = formGroup.value.name;

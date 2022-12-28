@@ -1,4 +1,8 @@
-<form class="example-form" [formGroup]="myForm" (ngSubmit)="submitData(myForm)">
+<form
+  class="example-form"
+  [formGroup]="myForm"
+  (ngSubmit)="submitData(myForm, $event)"
+>
   <mat-dialog-content>
     <h2>Add Product Info</h2>
     <div class="row">
