@@ -13,6 +13,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { QuentityInputComponent } from './product-list/quentity-input/quentity-input.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     ShoppingCartComponent,
     ProductListComponent,
+    QuentityInputComponent,
     CustomFormDialogComponent,
   ],
   bootstrap: [AppComponent],

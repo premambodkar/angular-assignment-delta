@@ -22,10 +22,11 @@ export class QuentityInputComponent {
     --this.quentity;
   }
 
-  addTocart() {
-    const cartData = new CartModel();
-    cartData.product_id = this.productid;
-    cartData.quentity = this.quentity;
+  addToCart() {
+    const cartData = new CartModel({
+      product_id: this.productid,
+      quentity: this.quentity,
+    });
     this.commonService.addToCart(cartData);
   }
 }

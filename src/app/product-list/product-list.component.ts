@@ -25,13 +25,7 @@ export class ProductListComponent {
 
   increment(product_id: string) {}
 
-  addToCart(product_id: string, quentity: string) {
-    const cartData = new CartModel({
-      product_id: product_id,
-      quentity: quentity,
-    });
-    this.commonService.addToCart(cartData);
-  }
+
 
   hasProductInTempCart(product_id: string) {
     // return this.tempCart.some((cart: CartModel) => {
