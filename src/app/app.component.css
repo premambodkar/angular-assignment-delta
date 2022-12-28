@@ -3,6 +3,14 @@
   height: 100vh;
 }
 
+.mat-drawer-inner-container {
+  background-color: #000d58;
+}
+
+.list-group {
+  background-color: #000d58 !important;
+}
+
 .page-content {
   width: 100vw;
   height: 100vh;
@@ -25,6 +33,6 @@ mat-drawer-content {
 }
 
 .mat-drawer-backdrop {
-  background-color: blueviolet;
+  background-color: #000d58;
   opacity: 50%;
 }
