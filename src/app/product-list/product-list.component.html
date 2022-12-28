@@ -10,38 +10,7 @@
           <span>Price: {{ item.price }}</span>
         </div>
         <div class="card-footer">
-          <div class="row">
-            <div
-              class="col-12 d-flex justify-content-center align-items-center"
-            >
-              <button
-                mat-raised-button
-                class="btn btn-primary m-2"
-                (click)="decrement()"
-              >
-                -
-              </button>
-              <input type="number" class="form-control" matInput />
-              <button
-                mat-raised-button
-                class="btn btn-primary m-2"
-                (click)="increment()"
-              >
-                +
-              </button>
-            </div>
-            <div
-              class="col-12 d-flex justify-content-center align-items-center"
-            >
-              <button
-                mat-raised-button
-                class="btn btn-primary m-2"
-                (click)="addToCart(item.id, '')"
-              >
-                Add To Cart
-              </button>
-            </div>
-          </div>
+          <quentity-input></quentity-input>
         </div>
       </div>
     </ng-container>

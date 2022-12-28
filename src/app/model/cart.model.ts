@@ -1,5 +1,5 @@
 export class CartModel {
-  product_id: number;
+  product_id: string;
   quentity: number;
   constructor(obj?: any) {
     if (obj) {

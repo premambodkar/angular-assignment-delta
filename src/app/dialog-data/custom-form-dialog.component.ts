@@ -33,29 +33,8 @@ export class CustomFormDialogComponent {
       product.name = formGroup.value.name;
       product.price = formGroup.value.price;
       product.image = formGroup.value.image;
-      product.id = this.productIdGenerator();
+      product.id = this.commonService.productIdGenerator();
       this.commonService.addproduct(product);
     }
-  }
-
-  productIdGenerator() {
-    const productId = this.randomString(16);
-    if (
-      this.commonService.productList.some((product: ProductModel) => {
-        return product.id === productId;
-      })
-    ) {
-      this.productIdGenerator();
-    }
-    return productId;
-  }
-
-  randomString(length: number) {
-    const chars =
-      '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var result = '';
-    for (var i = length; i > 0; --i)
-      result += chars[Math.floor(Math.random() * chars.length)];
-    return result;
   }
 }
