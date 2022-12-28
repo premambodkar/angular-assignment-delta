@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatTableModule,
     MatDialogModule,
+    MatInputModule,
     MatFormFieldModule,
     MatToolbarModule,
   ],

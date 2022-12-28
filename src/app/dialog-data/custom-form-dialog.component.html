@@ -3,41 +3,39 @@
     <h2>Add Product Info</h2>
     <div class="row">
       <div class="col">
-        <mat-form-field class="example-full-width">
-          <mat-label>Product Image Uploader</mat-label>
+        <mat-label>Image</mat-label>
+        <button (click)="fileInput.click()">
+          <mat-icon fontIcon="library_add"> </mat-icon>
+          <span>Select</span>
           <input
+            #fileInput
             type="file"
-            class="form-control"
-            matInput
-            formControlName="fileUploader"
+            (change)="onFileInput($event)"
+            style="display:none;"
           />
-        </mat-form-field>
+        </button>
       </div>
 
       <div class="col">
-        <mat-form-field class="example-full-width">
-          <mat-label>Name</mat-label>
-          <input
-            type="text"
-            class="form-control"
-            matInput
-            placeholder="Name"
-            formControlName="name"
-          />
-        </mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          type="text"
+          class="form-control"
+          matInput
+          placeholder="Name"
+          formControlName="name"
+        />
       </div>
 
       <div class="col">
-        <mat-form-field class="example-full-width">
-          <mat-label>Price</mat-label>
-          <input
-            type="number"
-            class="form-control"
-            matInput
-            placeholder="price"
-            formControlName="price"
-          />
-        </mat-form-field>
+        <mat-label>Price</mat-label>
+        <input
+          type="number"
+          class="form-control"
+          matInput
+          placeholder="price"
+          formControlName="price"
+        />
       </div>
     </div>
   </mat-dialog-content>

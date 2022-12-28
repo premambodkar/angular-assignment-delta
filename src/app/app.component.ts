@@ -33,6 +33,8 @@ export class AppComponent {
       data: {
         animal: 'panda',
       },
+      height: '15rem',
+      width: '30rem',
     });
   }
 }

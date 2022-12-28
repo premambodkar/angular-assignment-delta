@@ -1,15 +1,49 @@
-<div class="container">
-  <div class="row">
+<div class="row">
+  <div class="card-columns">
     <ng-container *ngFor="let item of commonService.productList">
-      <div class="card col-4">
-        <img class="card-img-top" src="..." alt="Card image cap" />
+      <div class="card">
+        <img class="card-img-top" [src]="item.image" />
         <div class="card-body">
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {{ item.name }}
           </p>
+          <span>Price: {{ item.price }}</span>
         </div>
-      </div></ng-container
-    >
+        <div class="card-footer">
+          <div class="row">
+            <div
+              class="col-12 d-flex justify-content-center align-items-center"
+            >
+              <button
+                mat-raised-button
+                class="btn btn-primary m-2"
+                (click)="decrement()"
+              >
+                -
+              </button>
+              <input type="number" class="form-control" matInput />
+              <button
+                mat-raised-button
+                class="btn btn-primary m-2"
+                (click)="increment()"
+              >
+                +
+              </button>
+            </div>
+            <div
+              class="col-12 d-flex justify-content-center align-items-center"
+            >
+              <button
+                mat-raised-button
+                class="btn btn-primary m-2"
+                (click)="addToCart(item.id, 1)"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>

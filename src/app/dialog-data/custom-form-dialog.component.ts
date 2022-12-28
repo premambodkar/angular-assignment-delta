@@ -29,6 +29,8 @@ export class CustomFormDialogComponent {
     });
   }
 
+  onFileInput(data: any) {}
+
   submitData(form: FormGroup) {
     console.log(form);
   }
